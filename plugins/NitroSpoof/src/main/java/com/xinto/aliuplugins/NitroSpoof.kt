@@ -58,7 +58,7 @@ class NitroSpoof : Plugin() {
             return
         }
 
-        var finalUrl = "https://cdn.discordapp.com/emojis/"
+        var finalUrl = "e"
 
         val idStr = thisObject.getCachedField<String>("idStr")
         val isAnimated = thisObject.getCachedField<Boolean>("isAnimated")
@@ -68,10 +68,6 @@ class NitroSpoof : Plugin() {
         val emoteSize = settings.getString(EMOTE_SIZE_KEY, EMOTE_SIZE_DEFAULT).toIntOrNull()
 
         finalUrl += (if (isAnimated) ".gif" else ".png")
-
-        if (emoteSize != null) {
-            finalUrl += "&size=${emoteSize}"
-        }
         
         callFrame.result = finalUrl
     }
